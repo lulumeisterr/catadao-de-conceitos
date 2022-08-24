@@ -1,9 +1,6 @@
-# Sobre
- Aplicar convenções/padrões de microservicos utilizando
-  
-# Contexto para estudo
-  Pensando na comunicação dos microserviços sera utilizado tecnicas para buscar
-  resiliencia, eficiencia e robustez.
+# Sobre.
+ Aplicar convenções/padrões de microservicos utilizando pensando na comunicação dos microserviços sera utilizado tecnicas para buscar
+ resiliencia, eficiencia e robustez.
 
 # Patterns e conceitos a serem utilizados.
  
@@ -13,6 +10,8 @@
  - Service Register : Sera armazenados todas as maquinas por meio de ip e porta.
  - Load Balance : O balanceamento de carga visa otimizar o uso de recursos, maximizar o throughput, minimizar o tempo de resposta e evitar a sobrecarga de qualquer recurso único
 
-# Ideia de arquitetura
+# Tecnologias.
+
+# Ideia de arquitetura.
 
 ![baguncinha (1)](https://user-images.githubusercontent.com/25963928/186300796-722245e8-250f-4cdc-8a04-0c89d8eec49c.png)
