@@ -15,4 +15,4 @@
 
 # Ideia de arquitetura
 
-![baguncinha](https://user-images.githubusercontent.com/25963928/186300676-9ab6ee4e-1519-47d9-9ad2-cdc62b0fd649.png)
+![baguncinha (1)](https://user-images.githubusercontent.com/25963928/186300796-722245e8-250f-4cdc-8a04-0c89d8eec49c.png)
