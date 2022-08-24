@@ -11,7 +11,15 @@
  - Load Balance : O balanceamento de carga visa otimizar o uso de recursos, maximizar o throughput, minimizar o tempo de resposta e evitar a sobrecarga de qualquer recurso único
 
 # Tecnologias.
-
+  - .NETCORE 6
+    - ORM : EFCore
+  - Ocelot 
+     - API GATEWAY (https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot)
+     - Service Discovery (https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
+  - Load Balance.
+    - Nginx
+  - Docker
+  
 # Ideia de arquitetura.
 
 ![baguncinha (1)](https://user-images.githubusercontent.com/25963928/186300796-722245e8-250f-4cdc-8a04-0c89d8eec49c.png)
