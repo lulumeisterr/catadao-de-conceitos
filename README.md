@@ -1,6 +1,5 @@
 # Sobre.
- Aplicar convenções/padrões de microservicos utilizando pensando na comunicação dos microserviços sera utilizado tecnicas para buscar
- resiliencia, eficiencia e robustez.
+ Aplicar convenções/padrões de microservicos utilizando tecnicas para buscar resiliencia, eficiencia e robustez.
 
 # Patterns e conceitos a serem utilizados.
  
