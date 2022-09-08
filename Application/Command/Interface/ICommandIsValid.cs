@@ -1,4 +1,4 @@
-﻿namespace Domain.Commands.Intefaces
+﻿namespace Application.Command.Interface
 {
     public interface ICommandIsValid
     {

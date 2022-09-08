@@ -1,5 +1,6 @@
-using Domain.CommandHandler.Interface;
-using Domain.Commands;
+using Application.Command.Interface.IHandler;
+using Application.ViewModel.NegociacaoRequest;
+using Application.ViewModel.response;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Domain.Controllers
@@ -25,12 +26,23 @@ namespace Domain.Controllers
         /// <summary>
         ///  Criar negociacao
         /// </summary>
-        /// <param name="commandRequest"></param>
-        /// <returns>objeto negociacao</returns>
-        [HttpPost("/negociation")]
-        public Task<NegociationCommandResponse> createNegociation([FromBody] NegociationCommandRequest commandRequest) 
+        /// <param name="commandRequest">Request a ser recebida</param>
+        /// <returns>command request</returns>
+        [HttpPost("/negocio")]
+        public Task<NegociationCommandResponse> criarNegocio([FromBody] NegociationCommandRequest commandRequest) 
         {
             return _handler.Handler(commandRequest);
+        }
+
+        /// <summary>
+        ///  Consultar todos negocios
+        /// </summary>
+        /// <param name="commandRequest">Request a ser recebida</param>
+        /// <returns>command request</returns>
+        [HttpGet("/negocio")]
+        public Task<NegociationCommandResponse> consultarNegocios() 
+        {
+            return null;
         }
     }
 }

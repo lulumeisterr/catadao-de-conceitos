@@ -1,9 +1,8 @@
-﻿using Domain.Commands.Intefaces;
-using Domain.Commands.Validators;
-using Domain.Models;
+﻿using Application.Command.Interface;
+using Application.Validations.NegociacaoRequest;
 using FluentValidation.Results;
 
-namespace Domain.Commands
+namespace Application.ViewModel.NegociacaoRequest
 {
     /// <summary>
     /// Herdando atributos da classe abstrata para criar referencias

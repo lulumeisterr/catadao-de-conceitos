@@ -1,4 +1,4 @@
-﻿namespace Domain.Models
+﻿namespace Application.ViewModel
 {
     public abstract class NegociationDTO
     {

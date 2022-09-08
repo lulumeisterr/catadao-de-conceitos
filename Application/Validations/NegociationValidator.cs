@@ -1,6 +1,8 @@
-﻿using FluentValidation;
+﻿
+using Application.ViewModel.NegociacaoRequest;
+using FluentValidation;
 
-namespace Domain.Commands.Validators
+namespace Application.Validations.NegociacaoRequest
 {
     /// <summary>
     /// Classe responsavel por receber um tipo generico para auto validar os atributos.

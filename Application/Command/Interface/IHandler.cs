@@ -1,6 +1,4 @@
-﻿using Domain.CommandHandler.Handlers;
-
-namespace Domain.CommandHandler.Interface
+﻿namespace Application.Command.Interface.IHandler
 {
     public interface IHandler<ResponseCommandHandler,RequestCommandHandler>
     {

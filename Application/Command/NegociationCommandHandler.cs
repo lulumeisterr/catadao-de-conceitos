@@ -1,7 +1,8 @@
-﻿using Domain.CommandHandler.Interface;
-using Domain.Commands;
+﻿using Application.Command.Interface.IHandler;
+using Application.ViewModel.NegociacaoRequest;
+using Application.ViewModel.response;
 
-namespace Domain.CommandHandler.Handlers
+namespace Domain.Command.Handlers
 {
     /**
      *  Responsavel por manipular tipos de comando que alteram o estado da entidade.

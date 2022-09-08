@@ -1,4 +1,4 @@
-﻿namespace Domain.Models
+﻿namespace Application.Data.Model.Negocio
 {
     /// <summary>
     /// Classe de negociacao

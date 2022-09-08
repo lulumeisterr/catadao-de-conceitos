@@ -1,8 +1,9 @@
 
-using Domain.CommandHandler.Handlers;
-using Domain.CommandHandler.Interface;
-using Domain.Commands;
 using System.Text.Json.Serialization;
+using Application.Command.Interface.IHandler;
+using Application.ViewModel.NegociacaoRequest;
+using Application.ViewModel.response;
+using Domain.Command.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers().AddJsonOptions(x =>

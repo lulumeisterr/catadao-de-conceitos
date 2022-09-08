@@ -1,7 +1,4 @@
-﻿using Domain.Commands.Intefaces;
-using Domain.Models;
-
-namespace Domain.Commands
+﻿namespace Application.ViewModel.response
 {
     /// <summary>
     /// Herdando atributos da classe abstrata para criar referencias
