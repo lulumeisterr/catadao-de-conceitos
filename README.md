@@ -20,5 +20,8 @@
   - Docker
   
 # Ideia de arquitetura.
-
-![baguncinha (1)](https://user-images.githubusercontent.com/25963928/186300796-722245e8-250f-4cdc-8a04-0c89d8eec49c.png)
+ 
+ # Rodando a imagem da aplicação local
+   Entre na raiz do projeto e execute os comandos abaixo.
+  - docker build -t netcoreapp:1.0 .
+  - docker run -d -p 8080:80 netcoreapp:1.0
