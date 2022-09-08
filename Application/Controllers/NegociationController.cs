@@ -3,7 +3,7 @@ using Application.ViewModel.NegociacaoRequest;
 using Application.ViewModel.response;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Domain.Controllers
+namespace Application.Controller.Negocio
 {
     [ApiController]
     [Route("[controller]")]
