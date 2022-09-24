@@ -4,13 +4,13 @@
     /// Herdando atributos da classe abstrata para criar referencias
     /// de validação utilizando Fluent Validator
     /// </summary>
-    public class NegociationCommandResponse : NegociationDTO
+    public class NegocioCommandResponse : NegocioDTO
     {
-        public NegociationCommandResponse()
+        public NegocioCommandResponse()
         {
         }
 
-        public NegociationCommandResponse(int numeroNegociacao, string nomeNegociante, bool statusNegociacao)
+        public NegocioCommandResponse(int numeroNegociacao, string nomeNegociante, bool statusNegociacao)
         {
             NumeroNegociacao = numeroNegociacao;
             NomeNegociante = nomeNegociante;

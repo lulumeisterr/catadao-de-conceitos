@@ -8,12 +8,12 @@ namespace Application.Validations.NegociacaoRequest
     /// Classe responsavel por receber um tipo generico para auto validar os atributos.
     /// </summary>
     /// <typeparam name="T">Espera um tipo Negociacao</typeparam>
-    public class NegociationValidator : AbstractValidator<NegociationCommandRequest>
+    public class NegocioValidator : AbstractValidator<NegociationCommandRequest>
     {
         /// <summary>
         /// Construtor
         /// </summary>
-        public NegociationValidator()
+        public NegocioValidator()
         {
             ValidateNegociationNumber();
             ValidateNegociationName();

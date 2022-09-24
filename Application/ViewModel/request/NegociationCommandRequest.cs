@@ -8,7 +8,7 @@ namespace Application.ViewModel.NegociacaoRequest
     /// Herdando atributos da classe abstrata para criar referencias
     /// de validação utilizando Fluent Validator
     /// </summary>
-    public class NegociationCommandRequest : NegociationDTO, ICommandIsValid
+    public class NegociationCommandRequest : NegocioDTO, ICommandIsValid
     {
         /// <summary>
         /// Construtor
@@ -29,7 +29,7 @@ namespace Application.ViewModel.NegociacaoRequest
         /// <returns>Retorna se os dados estao integros</returns>
         public bool IsValid()
         {
-            ValidationResult validationResult = new NegociationValidator().Validate(this);
+            ValidationResult validationResult = new NegocioValidator().Validate(this);
             return validationResult.IsValid;
         }
     }

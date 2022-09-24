@@ -1,6 +1,6 @@
 ﻿namespace Application.ViewModel
 {
-    public abstract class NegociationDTO
+    public abstract class NegocioDTO
     {
         public int NumeroNegociacao { get; set; }
         public string NomeNegociante { get; set; }

@@ -1,6 +1,4 @@
-﻿using Application.Command.Interface.IHandler;
-using Application.ViewModel.NegociacaoRequest;
-using Application.ViewModel.response;
+﻿using Application.Data.NegocioDbContext;
 
 namespace Domain.Command.Handlers
 {
@@ -13,14 +11,16 @@ namespace Domain.Command.Handlers
 	    - Realizar o commit, adicionar regras de validacao para que so seja commitado caso não tenha nenhum erro/notifications do fluent validator
 	    - Retornar o status da gravação no banco caso contrario lancamos uma notificacao de erro.
      */
-    public class NegociationCommandHandler : IHandler<NegociationCommandResponse,NegociationCommandRequest>
+    public class NegociationCommandHandler : IHandler<NegocioCommandResponse,NegociationCommandRequest>
     {
-        public Task<NegociationCommandResponse> Handler(NegociationCommandRequest request)
+        private readonly NegocioDbContext negocioDbContext;
+        public Task<NegocioCommandResponse> Handler(NegociationCommandRequest request)
         {
             if (!request.IsValid())
                 return null;
 
-            return Task.FromResult(new NegociationCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
+            negocioDbContext.Add(request);
+            return Task.FromResult(new NegocioCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
         }
     }
 }
