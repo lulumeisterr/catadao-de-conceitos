@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 namespace Application.Controller.Negocio
 {
-    [ApiController,Route("[controller]")]
+    [ApiController]
+    [Route("[controller]")]
     [Consumes("application/json")]
     public class NegocioController : ControllerBase
     {

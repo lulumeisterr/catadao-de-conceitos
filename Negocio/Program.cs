@@ -4,5 +4,6 @@ builder.Services.AddScoped<IHandler<NegocioCommandResponse,NegociationCommandReq
 builder.AddOpenAPI();
 builder.Services.AddEFCore(builder.Configuration);
 var app = builder.Build();
+app.MapControllers();
 app.UseOpenSwagger();
 app.Run();

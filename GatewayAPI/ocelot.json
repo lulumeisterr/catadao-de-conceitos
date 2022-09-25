@@ -1,0 +1,26 @@
+﻿{
+    "Routes": [
+        {
+            "ServiceName": "",
+            "DownstreamPathTemplate": "/negocio", // Url do serviço a ser requisitada
+            "DownstreamScheme": "http", // Define o protocolo
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/negocio", // Url padrão que define um ponto de entrada para as requições a partir do gateway
+            "UpstreamHttpMethod": [ "POST" ], // Define metodos que seram aceitos pelo gateway
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "PeriodTimespan": 1,
+                "Limit": 1,
+                "Period": "1s"
+            }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7053"
+    }
+}
