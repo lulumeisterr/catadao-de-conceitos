@@ -2,7 +2,7 @@
  Aplicar convenções/padrões de microservicos utilizando tecnicas para buscar resiliencia, eficiencia e robustez.
 
 # Patterns e conceitos a serem utilizados.
-  - Gateway: sera utilizado como proxy reverso responsavel por blindar a aplicação.
+  - Gateway: sera utilizado como proxy reverso como porta de entrada para se connectar com os microservicos responsavel por centralizar as requisições.
   - Service Discovery: Será responsavel por resolver problemas de mapeamento de endereços de rede para
     reconhecer novas instancias de maquinas por meio de ip e porta pois se estamos sendo gerenciado por um provedor cloud as maquinas contem ips dinamicos.
     Caso uma maquina pare de funcionar o service discovery por meio de health-check é responsavel por desregistrar a maquina para que você sempre tenha dados     consistentes.
