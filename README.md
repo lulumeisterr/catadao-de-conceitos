@@ -14,8 +14,8 @@
   - .NETCORE 6
     - ORM : EFCore
   - Ocelot 
-     - API GATEWAY (https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot)
-     - Service Discovery (https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
+     - API GATEWAY
+     - Service Discovery 
   - Load Balance.
     - Nginx
   - Docker
@@ -30,3 +30,9 @@
  # Links:   
    - http://localhost:8500/ui/dc1/services
    - http://localhost:8080/gateway/negocio
+
+ # Links de apis e referencias
+   - https://developer.hashicorp.com/consul/api-docs/agent/service
+   - https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html
+   - https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot
+   - https://www.youtube.com/watch?v=Rx4YXkrAXD0&t=1310s
