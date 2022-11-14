@@ -26,5 +26,4 @@
 
  # Rodando a imagem da aplicação local
    Entre na raiz do projeto e execute os comandos abaixo.
-  - docker build -t netcoreapp:1.0 .
-  - docker run -d -p 8080:80 netcoreapp:1.0
+    - docker-compose up --build
