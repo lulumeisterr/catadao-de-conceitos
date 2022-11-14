@@ -24,6 +24,9 @@
  
  ![image](https://user-images.githubusercontent.com/25963928/192132000-22a296f2-8102-4e8b-acb1-a9d2ba26b574.png)
 
- # Rodando a imagem da aplicação local
-   Entre na raiz do projeto e execute os comandos abaixo.
-    - docker-compose up --build
+ # Rodando a imagem da aplicação local :
+   Entre na raiz do projeto e execute: <b>docker-compose up --build</b>
+    
+ # Links:   
+   - http://localhost:8500/ui/dc1/services
+   - http://localhost:8080/gateway/negocio
