@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{A50F5700-00F8-45FB-B93D-B7AFB85899B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{EC2E7EB1-417C-4C17-BDF9-07ECEC22016B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{5C2328D0-686A-4ADF-9F17-EACEDDF8776E}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A50F5700-00F8-45FB-B93D-B7AFB85899B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50F5700-00F8-45FB-B93D-B7AFB85899B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50F5700-00F8-45FB-B93D-B7AFB85899B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50F5700-00F8-45FB-B93D-B7AFB85899B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2E7EB1-417C-4C17-BDF9-07ECEC22016B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2E7EB1-417C-4C17-BDF9-07ECEC22016B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2E7EB1-417C-4C17-BDF9-07ECEC22016B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2E7EB1-417C-4C17-BDF9-07ECEC22016B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9D13D85-DB00-4A67-8818-AC8D98703FBF}
+	EndGlobalSection
+EndGlobal

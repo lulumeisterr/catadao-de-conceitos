@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: lucas
+      MYSQL_PASSWORD: root
+
+  gateway:
+    build: ./Gateway
+    container_name: gateway
+    ports: 
+    - 8080:8080
+    networks:
+      - compose-bridge
+
+  negocio:
+    depends_on:
+      - db
+    build: ./Negocio
+    container_name: negocio
+    ports: 
+    - 8081:8081
+    networks:
+      - compose-bridge
+
+networks:
+  compose-bridge:
+    driver: bridge
+

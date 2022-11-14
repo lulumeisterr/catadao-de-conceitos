@@ -7,7 +7,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5000
+                    "Port": 8081
                 }
             ],
             "UpstreamPathTemplate": "/gateway/negocio", // Url padrão que define um ponto de entrada para as requições a partir do gateway
