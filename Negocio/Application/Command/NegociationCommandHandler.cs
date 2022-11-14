@@ -25,7 +25,14 @@ namespace Domain.Command.Handlers
                 return null;
 
             //Construir um automapper para a camada de request
-            negocioDbContext.Add(request);
+            Negocio negocio = new();
+            negocio.NomeNegociante = request.NomeNegociante;
+            negocio.StatusNegociacao = request.StatusNegociacao;
+            negocio.NumeroNegociacao = request.NumeroNegociacao;
+
+            negocioDbContext.Add(negocio);
+            negocioDbContext.SaveChanges();
+
             return Task.FromResult(new NegocioCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
         }
     }

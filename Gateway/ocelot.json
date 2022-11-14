@@ -6,7 +6,7 @@
             "DownstreamScheme": "http", // Define o protocolo
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "host.docker.internal",
                     "Port": 8081
                 }
             ],
