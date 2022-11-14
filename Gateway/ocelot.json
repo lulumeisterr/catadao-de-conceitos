@@ -1,7 +1,18 @@
 ﻿{
+    "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+            "Scheme": "http",
+            "Host": "host.docker.internal",
+            "Port": 8500,
+            "Type": "Consul"
+        }
+    },
     "Routes": [
         {
-            "ServiceName": "",
+            "ServiceName": "negocio-services", //Servicename responsavel para obter o servico do consul
+            "LoadBalancerOptions": {
+                "Type": "LeastConnection"
+            },
             "DownstreamPathTemplate": "/negocio", // Url do serviço a ser requisitada
             "DownstreamScheme": "http", // Define o protocolo
             "DownstreamHostAndPorts": [
@@ -19,8 +30,5 @@
                 "Period": "1s"
             }
         }
-    ],
-    "GlobalConfiguration": {
-        "BaseUrl": "https://localhost:7053"
-    }
+    ]
 }

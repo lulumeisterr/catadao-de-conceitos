@@ -1,6 +1,7 @@
 // Extensions 
 global using Application.Extensions.EFcore;
 global using Application.Extensions.OpenAPI;
+global using Application.Extensions.Registry;
 
 // Implementations 
 global using Application.Command.Interface.IHandler;

@@ -1,4 +1,8 @@
-﻿namespace GatewayAPI.Application.Extensions.Ocelot
+﻿
+
+using Ocelot.Provider.Consul;
+
+namespace GatewayAPI.Application.Extensions.Ocelot
 {
     public static partial class ServiceCollectionExtensions
     {
@@ -12,7 +16,9 @@
         public static WebApplicationBuilder AddOcelotConfiguration(this WebApplicationBuilder builder)
         {
             builder.Configuration.AddJsonFile("ocelot.json");
-            builder.Services.AddOcelot();
+            builder.Services
+                .AddOcelot()
+                .AddConsul();
             return builder;
         }
     }
