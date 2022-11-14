@@ -9,6 +9,8 @@ services:
       MYSQL_DATABASE: db
       MYSQL_USER: lucas
       MYSQL_PASSWORD: root
+    networks:
+      - compose-bridge
 
   gateway:
     build: ./Gateway
