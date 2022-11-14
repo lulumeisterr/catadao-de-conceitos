@@ -21,8 +21,8 @@
   - Docker
   
 # Ideia de arquitetura.
- 
- ![image](https://user-images.githubusercontent.com/25963928/192132000-22a296f2-8102-4e8b-acb1-a9d2ba26b574.png)
+
+ ![image](https://user-images.githubusercontent.com/25963928/201785934-2e04fac7-70bd-448b-9ba7-00247db04238.png)
 
  # Rodando a imagem da aplicação local :
    Entre na raiz do projeto e execute: <b>docker-compose up --build</b>
