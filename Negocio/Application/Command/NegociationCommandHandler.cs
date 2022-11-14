@@ -14,11 +14,17 @@ namespace Domain.Command.Handlers
     public class NegociationCommandHandler : IHandler<NegocioCommandResponse,NegociationCommandRequest>
     {
         private readonly NegocioDbContext negocioDbContext;
+
+        public NegociationCommandHandler(NegocioDbContext applicationDbContext)
+        {
+            this.negocioDbContext = applicationDbContext;
+        }
         public Task<NegocioCommandResponse> Handler(NegociationCommandRequest request)
         {
             if (!request.IsValid())
                 return null;
 
+            //Construir um automapper para a camada de request
             negocioDbContext.Add(request);
             return Task.FromResult(new NegocioCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
         }
