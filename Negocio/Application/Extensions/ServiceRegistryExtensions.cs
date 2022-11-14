@@ -36,7 +36,7 @@ namespace Application.Extensions.Registry
 
             lifeTime.ApplicationStopping.Register(() =>
             {
-                logger.LogInformation($"Servico {agentRegistration.ID} o servico inativo");
+                logger.LogInformation($"Servico {agentRegistration.ID} inativo");
 
                 /**
                  *  implementar healthcheck para remover os servicos
