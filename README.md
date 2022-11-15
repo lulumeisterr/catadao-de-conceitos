@@ -14,16 +14,25 @@
   - .NETCORE 6
     - ORM : EFCore
   - Ocelot 
-     - API GATEWAY (https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot)
-     - Service Discovery (https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
+     - API GATEWAY
+     - Service Discovery 
   - Load Balance.
     - Nginx
   - Docker
   
 # Ideia de arquitetura.
- 
- ![image](https://user-images.githubusercontent.com/25963928/192132000-22a296f2-8102-4e8b-acb1-a9d2ba26b574.png)
 
- # Rodando a imagem da aplicação local
-   Entre na raiz do projeto e execute os comandos abaixo.
-    - docker-compose up --build
+ ![image](https://user-images.githubusercontent.com/25963928/201785934-2e04fac7-70bd-448b-9ba7-00247db04238.png)
+
+ # Rodando a imagem da aplicação local :
+   Entre na raiz do projeto e execute: <b>docker-compose up --build</b>
+    
+ # Links:   
+   - http://localhost:8500/ui/dc1/services
+   - http://localhost:8080/gateway/negocio
+
+ # Links de apis e referencias
+   - https://developer.hashicorp.com/consul/api-docs/agent/service
+   - https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html
+   - https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot
+   - https://www.youtube.com/watch?v=Rx4YXkrAXD0&t=1310s
