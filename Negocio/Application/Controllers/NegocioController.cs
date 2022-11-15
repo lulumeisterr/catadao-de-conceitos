@@ -9,7 +9,7 @@ namespace Application.Controller.Negocio
     public class NegocioController : ControllerBase
     {
         private readonly ILogger<NegocioController> _logger;
-        private readonly IHandler<NegociationCommandRequest,NegocioCommandResponse> _handler;
+        private readonly IHandler<NegociationCommandRequest,NegocioCommandResponse> _commandHandler;
         private readonly IQueryHandler<NegocioCommandResponse> _queryHandler;
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Application.Controller.Negocio
         public NegocioController(ILogger<NegocioController> logger , IHandler<NegociationCommandRequest, NegocioCommandResponse> handler, IQueryHandler<NegocioCommandResponse> queryHandler)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger)); ;
-            _handler = handler ?? throw new ArgumentNullException(nameof(handler));
+            _commandHandler = handler ?? throw new ArgumentNullException(nameof(handler));
             _queryHandler = queryHandler ?? throw new ArgumentNullException(nameof(queryHandler));
         }
 
@@ -34,7 +34,7 @@ namespace Application.Controller.Negocio
         [HttpPost("/v1/negocios")]
         public Task<NegocioCommandResponse> criarNegocio([FromQuery] string version,[FromBody] NegociationCommandRequest commandRequest) 
         {
-            return _handler.Handler(commandRequest);
+            return _commandHandler.Handler(commandRequest);
         }
 
         /// <summary>
