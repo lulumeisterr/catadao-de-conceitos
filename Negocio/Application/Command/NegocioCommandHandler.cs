@@ -11,11 +11,11 @@ namespace Domain.Command.Handlers
 	    - Realizar o commit, adicionar regras de validacao para que so seja commitado caso não tenha nenhum erro/notifications do fluent validator
 	    - Retornar o status da gravação no banco caso contrario lancamos uma notificacao de erro.
      */
-    public class NegociationCommandHandler : IHandler<NegocioCommandResponse,NegociationCommandRequest>
+    public class NegocioCommandHandler : IHandler<NegociationCommandRequest,NegocioCommandResponse>
     {
         private readonly NegocioDbContext negocioDbContext;
 
-        public NegociationCommandHandler(NegocioDbContext applicationDbContext)
+        public NegocioCommandHandler(NegocioDbContext applicationDbContext)
         {
             this.negocioDbContext = applicationDbContext;
         }

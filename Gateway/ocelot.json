@@ -13,7 +13,7 @@
             "LoadBalancerOptions": {
                 "Type": "LeastConnection"
             },
-            "DownstreamPathTemplate": "/negocio", // Url do serviço a ser requisitada
+            "DownstreamPathTemplate": "/v1/negocios", // Url do serviço a ser requisitada
             "DownstreamScheme": "http", // Define o protocolo
             "DownstreamHostAndPorts": [
                 {
@@ -21,8 +21,8 @@
                     "Port": 8081
                 }
             ],
-            "UpstreamPathTemplate": "/gateway/negocio", // Url padrão que define um ponto de entrada para as requições a partir do gateway
-            "UpstreamHttpMethod": [ "POST" ], // Define metodos que seram aceitos pelo gateway
+            "UpstreamPathTemplate": "/gateway/v1/negocios", // Url padrão que define um ponto de entrada para as requições a partir do gateway
+            "UpstreamHttpMethod": [ "POST","GET" ], // Define metodos que seram aceitos pelo gateway
             "RateLimitOptions": {
                 "EnableRateLimiting": true,
                 "PeriodTimespan": 1,
