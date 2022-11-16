@@ -19,7 +19,10 @@
  # Rodando a imagem da aplicação local :
    - Entre na raiz do projeto
    - execute: <b>docker-compose up --build</b>
-   
+     
+ # Ideia de arquitetura.
+  ![image](https://user-images.githubusercontent.com/25963928/201785934-2e04fac7-70bd-448b-9ba7-00247db04238.png)
+    
  # Links:   
    - http://localhost:8500/ui/dc1/services
    - http://localhost:8080/gateway/negocio
@@ -29,8 +32,3 @@
    - https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html
    - https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot
    - https://www.youtube.com/watch?v=Rx4YXkrAXD0&t=1310s
-     
-# Ideia de arquitetura.
-
- ![image](https://user-images.githubusercontent.com/25963928/201785934-2e04fac7-70bd-448b-9ba7-00247db04238.png)
-    
