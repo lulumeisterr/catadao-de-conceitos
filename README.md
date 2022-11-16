@@ -15,6 +15,7 @@
      - Api Gateway com ocelot
      - Service Discovery utilizando consul
   - Docker
+     - docker-compose
 
  # Rodando a imagem da aplicação local :
    - Entre na raiz do projeto
