@@ -3,7 +3,7 @@ using Consul;
 
 namespace Application.Extensions.Registry
 {
-    public static partial class ServiceRegistryExtensions
+    public static partial class ServiceCollectionExtensionsDiscoveryExtensions
     {
         //Configurando a inicialização do consul responsavel por registar o servil que sera registrado no consul dentro do api gateway
         public static IServiceCollection AddConsulSettings(this IServiceCollection services, IConfiguration configuration)
