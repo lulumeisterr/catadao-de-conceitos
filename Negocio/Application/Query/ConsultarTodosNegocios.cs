@@ -1,6 +1,8 @@
-﻿using Application.Data.NegocioDbContext;
+﻿using System.Text.Json;
+using Application.Data.NegocioDbContext;
 using Microsoft.EntityFrameworkCore;
-using Query.Application.Query.Interfaces;
+using Microsoft.Extensions.Caching.Distributed;
+
 
 namespace QueryHandler.Application.Query
 {
@@ -10,14 +12,17 @@ namespace QueryHandler.Application.Query
     public class ConsultarTodosNegocios : IQueryHandler<NegocioCommandResponse>
     {
         private readonly NegocioDbContext _negocioDbContext;
+        private readonly IDistributedCache _redisCache;
+        private const string GetCacheRedis = "AllTrades";
 
         /// <summary>
         /// Construtor
         /// </summary>
         /// <param name="applicationDbContext">Contexto</param>
-        public ConsultarTodosNegocios(NegocioDbContext applicationDbContext)
+        public ConsultarTodosNegocios(NegocioDbContext applicationDbContext, IDistributedCache cache)
         {
-            this._negocioDbContext = applicationDbContext;
+            this._negocioDbContext = applicationDbContext ?? throw new ArgumentException(nameof(applicationDbContext)); ;
+            this._redisCache = cache ?? throw new ArgumentException(nameof(cache));
         }
 
         /// <summary>
@@ -26,19 +31,27 @@ namespace QueryHandler.Application.Query
         /// <returns>Lista de negocio</returns>
         public async Task<List<NegocioCommandResponse>> ConsultarTodosNegociosQueryHandler()
         {
-            List<Negocio> result = await _negocioDbContext.Negocio.ToListAsync();
-
-            if (result == null) 
-                return null;
-
-            List<NegocioCommandResponse> resulToResponse = result.Select(neg => new NegocioCommandResponse
+            string? resultCache = await _redisCache.GetStringAsync(GetCacheRedis);
+            if (String.IsNullOrEmpty(resultCache)) 
             {
-                NomeNegociante = neg.NomeNegociante,
-                NumeroNegociacao = neg.NumeroNegociacao,
-                StatusNegociacao = neg.StatusNegociacao
-            }).ToList();
+                List<Negocio> result = await _negocioDbContext.Negocio.ToListAsync();
 
-            return resulToResponse;
+                if (result == null)
+                    return null;
+
+                List<NegocioCommandResponse> resulToResponse = result.Select(neg => new NegocioCommandResponse
+                {
+                    NomeNegociante = neg.NomeNegociante,
+                    NumeroNegociacao = neg.NumeroNegociacao,
+                    StatusNegociacao = neg.StatusNegociacao
+                }).ToList();
+                await _redisCache.SetStringAsync(GetCacheRedis, JsonSerializer.Serialize(resulToResponse));
+                return resulToResponse;
+            } else
+            {
+                return JsonSerializer.Deserialize<List<NegocioCommandResponse>>(resultCache);
+            }
+            return null;
         }
     }
 }

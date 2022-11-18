@@ -1,4 +1,5 @@
 ﻿using Application.Data.NegocioDbContext;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Domain.Command.Handlers
 {
@@ -14,10 +15,13 @@ namespace Domain.Command.Handlers
     public class NegocioCommandHandler : IHandler<NegociationCommandRequest,NegocioCommandResponse>
     {
         private readonly NegocioDbContext negocioDbContext;
+        private readonly IDistributedCache _redisCache;
+        private const string GetCacheRedis = "AllTrades";
 
-        public NegocioCommandHandler(NegocioDbContext applicationDbContext)
+        public NegocioCommandHandler(NegocioDbContext applicationDbContext, IDistributedCache cache)
         {
             this.negocioDbContext = applicationDbContext;
+            this._redisCache = cache ?? throw new ArgumentException(nameof(cache));
         }
         public Task<NegocioCommandResponse> Handler(NegociationCommandRequest request)
         {
@@ -32,6 +36,7 @@ namespace Domain.Command.Handlers
 
             negocioDbContext.Add(negocio);
             negocioDbContext.SaveChanges();
+            _redisCache.Remove(GetCacheRedis);
 
             return Task.FromResult(new NegocioCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
         }

@@ -23,6 +23,14 @@ services:
     networks:
       - compose-bridge
 
+  redis:
+   image: redis
+   hostname: redis
+   ports:
+      - "6379:6379"
+   volumes:
+      - db-data:/var/lib/redis
+
   adminer:
     image: adminer
     ports:

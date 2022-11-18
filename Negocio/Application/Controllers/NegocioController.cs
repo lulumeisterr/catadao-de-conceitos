@@ -32,7 +32,7 @@ namespace Application.Controller.Negocio
         /// <param name="commandRequest">dados a serem cadastrados</param>
         /// <returns>Negocio inserido</returns>
         [HttpPost("/v1/negocios")]
-        public async Task<ActionResult<NegocioCommandResponse>> criarNegocio([FromQuery] string version,[FromBody] NegociationCommandRequest commandRequest) 
+        public async Task<ActionResult<NegocioCommandResponse>> criarNegocio([FromBody] NegociationCommandRequest commandRequest) 
         {
             NegocioCommandResponse response = await _commandHandler.Handler(commandRequest);
             if (response == null)
@@ -46,7 +46,7 @@ namespace Application.Controller.Negocio
         /// <param name="version">Versionamento da api</param>
         /// <returns>Lista de negocios</returns>
         [HttpGet("/v1/negocios")]
-        public async Task<ActionResult<List<NegocioCommandResponse>>> consultarTodosNegocios([FromQuery] string version)
+        public async Task<ActionResult<List<NegocioCommandResponse>>> consultarTodosNegocios()
         {
             List<NegocioCommandResponse> response = await _queryHandler.ConsultarTodosNegociosQueryHandler();
             if (!response.Any())
