@@ -15,7 +15,7 @@
      - Api Gateway com ocelot
      - Service Discovery utilizando consul
   - Cache Distribuido
-    - redis
+    - Redis
   - Docker
      - docker-compose
 
