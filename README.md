@@ -7,6 +7,7 @@
     reconhecer novas instancias de maquinas por meio de ip e porta pois se estamos sendo gerenciado por um provedor cloud as maquinas contem ips dinamicos.
     Caso uma maquina pare de funcionar o service discovery por meio de health-check é responsavel por desregistrar a maquina para que você sempre tenha dados     consistentes. 
   - Service Register : Sera armazenados todas as maquinas por meio de ip e porta.
+  - Clean Architecture 
   
 # Tecnologias.
   - .NETCORE 6
