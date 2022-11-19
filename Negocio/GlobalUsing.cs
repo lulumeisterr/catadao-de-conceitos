@@ -3,6 +3,7 @@ global using Application.Extensions.EFcore;
 global using Application.Extensions.OpenAPI;
 global using Application.Extensions.Registry;
 global using Application.Extensions.RedisCache;
+global using Application.Extensions.Server;
 
 // Implementations 
 global using Application.Command.Interface.IHandler;
@@ -11,6 +12,7 @@ global using Application.ViewModel.NegociacaoRequest;
 global using Application.ViewModel.response;
 global using Query.Application.Query.Interfaces;
 global using QueryHandler.Application.Query;
+
 // Entities
-global using Application.Data.Model.Negocio;
+global using Application.Data.Model.Server;
 

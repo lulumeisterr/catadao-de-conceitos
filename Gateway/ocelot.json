@@ -9,11 +9,11 @@
     },
     "Routes": [
         {
-            "ServiceName": "negocio-services", //Servicename responsavel para obter o servico do consul
+            "ServiceName": "server-services", //Servicename responsavel para obter o servico do consul
             "LoadBalancerOptions": {
                 "Type": "LeastConnection"
             },
-            "DownstreamPathTemplate": "/v1/negocios", // Url do serviço a ser requisitada
+            "DownstreamPathTemplate": "/v1/servers", // Url do serviço a ser requisitada
             "DownstreamScheme": "http", // Define o protocolo
             "DownstreamHostAndPorts": [
                 {
@@ -21,7 +21,7 @@
                     "Port": 8081
                 }
             ],
-            "UpstreamPathTemplate": "/gateway/v1/negocios", // Url padrão que define um ponto de entrada para as requições a partir do gateway
+            "UpstreamPathTemplate": "/gateway/v1/servers", // Url padrão que define um ponto de entrada para as requições a partir do gateway
             "UpstreamHttpMethod": [ "POST","GET" ], // Define metodos que seram aceitos pelo gateway
             "RateLimitOptions": {
                 "EnableRateLimiting": true,

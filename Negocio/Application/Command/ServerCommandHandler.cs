@@ -1,4 +1,4 @@
-﻿using Application.Data.NegocioDbContext;
+﻿using Application.Data.ConfigureDbContext;
 using Microsoft.Extensions.Caching.Distributed;
 
 namespace Domain.Command.Handlers
@@ -12,33 +12,33 @@ namespace Domain.Command.Handlers
 	    - Realizar o commit, adicionar regras de validacao para que so seja commitado caso não tenha nenhum erro/notifications do fluent validator
 	    - Retornar o status da gravação no banco caso contrario lancamos uma notificacao de erro.
      */
-    public class NegocioCommandHandler : IHandler<NegociationCommandRequest,NegocioCommandResponse>
+    public class ServerCommandHandler : IHandler<ServerCommandRequest,ServerCommandResponse>
     {
-        private readonly NegocioDbContext negocioDbContext;
+        private readonly ServerDbContext _serverContext;
         private readonly IDistributedCache _redisCache;
-        private const string GetCacheRedis = "AllTrades";
+        private const string GetCacheRedis = "AllServers";
 
-        public NegocioCommandHandler(NegocioDbContext applicationDbContext, IDistributedCache cache)
+        public ServerCommandHandler(ServerDbContext applicationDbContext, IDistributedCache cache)
         {
-            this.negocioDbContext = applicationDbContext;
+            this._serverContext = applicationDbContext;
             this._redisCache = cache ?? throw new ArgumentException(nameof(cache));
         }
-        public Task<NegocioCommandResponse> Handler(NegociationCommandRequest request)
+        public Task<ServerCommandResponse> Handler(ServerCommandRequest request)
         {
             if (!request.IsValid())
                 return null;
 
             //Construir um automapper para a camada de request
-            Negocio negocio = new();
-            negocio.NomeNegociante = request.NomeNegociante;
-            negocio.StatusNegociacao = request.StatusNegociacao;
-            negocio.NumeroNegociacao = request.NumeroNegociacao;
+            Server server = new();
+            server.Ip = request.Ip;
+            server.Nome = request.Nome;
+            server.Porta = request.Porta;
 
-            negocioDbContext.Add(negocio);
-            negocioDbContext.SaveChanges();
+            _serverContext.Add(server);
+            _serverContext.SaveChanges();
             _redisCache.Remove(GetCacheRedis);
 
-            return Task.FromResult(new NegocioCommandResponse(request.NumeroNegociacao, request.NomeNegociante, request.StatusNegociacao)); ;
+            return Task.FromResult(new ServerCommandResponse(request.Ip, request.Porta, request.Nome));
         }
     }
 }

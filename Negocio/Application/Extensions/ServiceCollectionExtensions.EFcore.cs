@@ -1,4 +1,4 @@
-using Application.Data.NegocioDbContext;
+using Application.Data.ConfigureDbContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Extensions.EFcore
@@ -8,7 +8,7 @@ namespace Application.Extensions.EFcore
     public static partial class ServiceCollectionExtensions
     {
         public static IServiceCollection AddEFCore(this IServiceCollection services, IConfiguration configuration) {
-            services.AddDbContext<NegocioDbContext>(opt => opt.UseMySql(configuration.GetConnectionString("SQL"),new MySqlServerVersion(new Version(8, 0, 27))));
+            services.AddDbContext<ServerDbContext>(opt => opt.UseMySql(configuration.GetConnectionString("SQL"),new MySqlServerVersion(new Version(8, 0, 27))));
             return services;
         }
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using Consul;
+﻿using Consul;
 
 namespace Application.Extensions.Registry
 {

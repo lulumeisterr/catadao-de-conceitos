@@ -8,6 +8,7 @@ services:
       - 3306:3306
     volumes:
       - db-data:/var/lib/mysql
+      - ./scripts:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db
@@ -29,7 +30,7 @@ services:
    ports:
       - "6379:6379"
    volumes:
-      - db-data:/var/lib/redis
+      - redis-data:/var/lib/redis
 
   adminer:
     image: adminer
@@ -60,7 +61,7 @@ services:
     depends_on:
       - db
     build: ./Negocio
-    container_name: negocio-api
+    container_name: server-api
     ports: 
     - 8081:80
     networks:
@@ -72,4 +73,5 @@ networks:
 
 volumes:
   db-data:
+  redis-data:
 
