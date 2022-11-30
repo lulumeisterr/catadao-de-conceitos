@@ -25,7 +25,7 @@
    - execute: <b>docker-compose up --build</b>
      
  # Ideia de arquitetura.
-  ![image](https://user-images.githubusercontent.com/25963928/201785934-2e04fac7-70bd-448b-9ba7-00247db04238.png)
+ ![image](https://user-images.githubusercontent.com/25963928/204695372-54afd564-81c8-4512-83b6-23df181cda87.png)
     
  # Links:   
    - http://localhost:8500/ui/dc1/services
